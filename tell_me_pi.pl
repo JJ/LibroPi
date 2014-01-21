@@ -11,15 +11,15 @@ my @name_of_digits = qw( zero one two three four five six seven eight nine );
 
 my @plural_ligatures= (" followed by "," and ",", after ",
 		       " and, behind them, ",", after these ",
-		       " after which there is ",
+		       " after which we can find ",
 		       " and, coming up ",", ", ", wait for it, ", 
-		       " , and, in a completely unexpected way " );
+		       ", and, in a completely unexpected way " );
 
 my @singular_ligatures= (" followed by "," and ",", after ",
 			 " and, behind it, ",", after this ",
-			 " after which there is "," and, coming up ",
+			 " after which we find "," and, coming up ",
 			 ", ", ", wait for it, ", 
-			 " , and, in a completely unexpected way ", 
+			 ", and, in a rather surprising way ", 
 			 " which is right before " );
 
 my $file_name= shift || '9999pi.txt';
@@ -34,20 +34,21 @@ if ( -r $file_name ) {
 
 
 # Sólo hay una aparción de 6 dígitos seguidos, y es de nueves
+$digits=~ s/\.//; # That's the period after the first 3 in 3.14
 $digits=~ s/999999/" the one and only six contiguous digits, which happen to be no less than six nines ".random_plural()." "/eg;
 
 for my $i (qw( 5 4 3 2) ) {
   for my $j ( 0.. 9 ) {
     my $re = $j."{".$i."}";
-    $digits =~ s/$re/$name_of_digits[$i]." ".$name_of_digits[$j]."s ".random_plural()/eg;
+    $digits =~ s/$re/$name_of_digits[$i]." ".$name_of_digits[$j]."s".random_plural()/eg;
   }
 }
 
 for my $j ( 0.. 9 ) {
-  $digits =~ s/$j/"one ".$name_of_digits[$j]." ".random_singular()/eg;
+  $digits =~ s/$j/"one ".$name_of_digits[$j].random_singular()/eg;
 }
 
-say $digits;
+say ucfirst($digits)." lots of other guys it would take too long (infinitely so, indeed) to even consider.";
 
 # Here come the functions
 

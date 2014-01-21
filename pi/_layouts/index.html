@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>The Pi Book</title>
+        <meta name="viewport" content="width=device-width">
+
+<link href='http://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>
+ <style> 
+    <!--
+/*****************************************************************************/
+/*
+/* Common
+/*
+/*****************************************************************************/
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body { height: 100%; }
+
+body {
+  background-color: #FFF;
+  font: 13.34px Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+                         font-family: 'Gentium Book Basic', serif;
+}
+
+h1.title { 
+    line-height:1.5em;
+    margin-bottom: 2em;
+    font-size:3em}
+
+h2 {font-size:2em}
+
+p { margin: 2em 0; 
+font-family: 'Cabin', sans-serif;
+                         }
+
+a         { color: #00a; }
+a:hover   { color: #000; }
+a:visited { color: #a0a; }
+
+
+.site {
+  font-size: 115%;
+  text-align: justify;
+  width: 42em;
+  margin: 3em auto 2em;
+  line-height: 1.5em;
+}
+
+.header a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.title a {
+  color: #a00;
+}
+
+.title a:hover {
+  color: #000;
+}
+
+.header a.extra {
+  color: #aaa;
+  margin-left: 1em;
+}
+
+.header a.extra:hover {
+  color: #000;
+}
+
+.meta {
+  color: #aaa;
+}
+
+.footer {
+  font-size: 80%;
+  color: #666;
+  border-top: 4px solid #eee;
+  margin-top: 2em;
+  overflow: hidden;
+}
+
+.footer .contact {
+  float: left;
+  margin-right: 3em;
+}
+
+.footer .contact a {
+  color: #8085C1;
+}
+
+.footer .rss {
+  margin-top: 1.1em;
+  margin-right: -.2em;
+  float: right;
+}
+
+.footer .rss img {
+  border: 0;
+}
+-->
+</style>
+
+    </head>
+    <body>
+
+        <div class="site">
+          <div class="header">
+            <h1 class="title">The Book of Pi: a history in figures</h1>
+
+          </div>
+
+          {{ content }}
+
+	  <div class='epilogue'>
+	    <h2>Epilogue</h2>
+
+<p>If you've actually <em>read</em> so far instead of just skimming
+  (or skipping it altogether), man, woman, you <em>really</em> love
+  Math. </p>
+
+<p>This is just an amusement that started
+  with <a href='http://psicobyte.com'>Psicobyte</a> creating
+  a <a href='http://github.com/psicobyte/LibroPi'>a
+    book <em>telling</em> Pi</a> and continued with
+  me <a href='http://github.com/JJ/PiBook'>rewriting it and
+  translating it into English</a>. The result is just for laughs, or
+    could be the beginning or something. Of the next 10000 digits, at
+  least.</p>
+
+</div>
+
+	  </div>
+          <div class="footer">
+            <div class="contact">
+              <p>
+                JJ Merelo<br />
+                Generated with Perl and Jekyll from Pi<br />
+                jjmerelo@gmail.com
+              </p>
+            </div>
+            <div class="contact">
+              <p>
+                <a href="https://github.com/JJ">github.com/JJ</a><br />
+                <a href="https://twitter.com/jjmerelo">twitter.com/jjmerelo</a><br />
+              </p>
+            </div>
+          </div>
+        </div>
+
+    </body>
+</html>
