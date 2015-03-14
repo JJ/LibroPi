@@ -23,14 +23,19 @@ my @singular_ligatures= (" followed by "," and ",", after ",
 			 " which is right before " );
 
 my $file_name= shift || '9999pi.txt';
+my $preffix_file_name = shift; # Inserts preffix for MD or whatever
 my $digits;
 
+
+if ( -r $preffix_file_name ) {
+    $digits = read_file($preffix_file_name);
+} 
+
 if ( -r $file_name ) {
-    $digits = read_file($file_name);
+    $digits .= read_file($file_name);
 } else {
     die "Can't read $file_name, sorry";
 }
-
 
 # A single occurrence of 6 digits, and it's nines... the whole nine yard :-)
 $digits=~ s/\.//; # That's the period after the first 3 in 3.14
