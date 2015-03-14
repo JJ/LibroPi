@@ -1,11 +1,11 @@
-#!/usr/bin/perl
+#!/usr/bin/env perl
 
 use strict;
 use warnings;
 
 use v5.12;
 
-use File::Slurp;
+use File::Slurp::Tiny qw(read_file);
 
 my @name_of_digits = qw( zero one two three four five six seven eight nine );
 
@@ -18,7 +18,7 @@ my @plural_ligatures= (" followed by "," and ",", after ",
 my @singular_ligatures= (" followed by "," and ",", after ",
 			 " and, behind it, ",", after this ",
 			 " after which we find "," and, coming up ",
-			 ", ", ", wait for it, ", 
+			 ", ", "and , wait for it, ", 
 			 ", and, in a rather surprising way ", 
 			 " which is right before " );
 
@@ -32,8 +32,7 @@ if ( -r $file_name ) {
 }
 
 
-
-# Sólo hay una aparción de 6 dígitos seguidos, y es de nueves
+# A single occurrence of 6 digits, and it's nines... the whole nine yard :-)
 $digits=~ s/\.//; # That's the period after the first 3 in 3.14
 $digits=~ s/999999/" the one and only six contiguous digits, which happen to be no less than six nines ".random_plural()." "/eg;
 
@@ -53,11 +52,11 @@ say ucfirst($digits)." lots of other guys it would take too long (infinitely so,
 # Here come the functions
 
 sub random_plural {
-  return @plural_ligatures[ rand( @plural_ligatures ) ];
+  return $plural_ligatures[ rand( @plural_ligatures ) ];
 }
 
 sub random_singular {
-  return @singular_ligatures[ rand( @singular_ligatures ) ];
+  return $singular_ligatures[ rand( @singular_ligatures ) ];
 }
 
 
